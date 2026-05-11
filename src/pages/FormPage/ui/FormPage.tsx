@@ -213,12 +213,16 @@ export function FormPage({
           </button>
         </div>
       </form>
-      <h2>Список пациентов</h2>
-      <div className="patientsCards">
-        {dataArr.map((el) => (
-          <Card data={el} key={el.fio} />
-        ))}
-      </div>
+      {dataArr.length !== 0 && (
+        <>
+          <h2>Список пациентов</h2>
+          <div className="patientsCards">
+            {dataArr.map((el) => (
+              <Card data={el} key={el.fio} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

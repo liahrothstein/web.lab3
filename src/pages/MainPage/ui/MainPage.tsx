@@ -1,6 +1,12 @@
-import { Nav } from "@entities/index";
+import { Card, Nav } from "@entities/index";
 
-export function MainPage() {
+import type { FormData } from "../../../shared/types/formData";
+
+interface MainPageProps {
+  dataArr: FormData[];
+}
+
+export function MainPage({ dataArr }: MainPageProps) {
   return (
     <div className="main">
       <h1>Информационная система: Регистрация физических показателей</h1>
@@ -34,6 +40,16 @@ export function MainPage() {
           заполните все обязательные поля и нажмите кнопку «Отправить».
         </p>
       </section>
+      {dataArr.length !== 0 && (
+        <>
+          <h2>Список пациентов</h2>
+          <div className="patientsCards">
+            {dataArr.map((el) => (
+              <Card data={el} key={el.fio} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

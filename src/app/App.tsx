@@ -12,8 +12,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/web.lab3/" />} />
-      <Route path="/web.lab3/" element={<MainPage />} />
-      <Route path="/web.lab3/about" element={<AboutPage />} />
+      <Route path="/web.lab3/" element={<MainPage dataArr={dataArr} />} />
+      <Route path="/web.lab3/about" element={<AboutPage dataArr={dataArr} />} />
       <Route
         path="/web.lab3/form"
         element={

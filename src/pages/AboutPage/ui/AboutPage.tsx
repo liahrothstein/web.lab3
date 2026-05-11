@@ -1,6 +1,12 @@
-import { Nav } from "@entities/index";
+import { Card, Nav } from "@entities/index";
 
-export function AboutPage() {
+import type { FormData } from "../../../shared/types/formData";
+
+interface AboutPageProps {
+  dataArr: FormData[];
+}
+
+export function AboutPage({ dataArr }: AboutPageProps) {
   return (
     <div className="about">
       <h1>Об авторе проекта</h1>
@@ -56,6 +62,16 @@ export function AboutPage() {
           весе и группе крови пользователя.
         </p>
       </section>
+      {dataArr.length !== 0 && (
+        <>
+          <h2>Список пациентов</h2>
+          <div className="patientsCards">
+            {dataArr.map((el) => (
+              <Card data={el} key={el.fio} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
