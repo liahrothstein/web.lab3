@@ -1,7 +1,10 @@
+import { Nav } from "@entities/index";
+
 export function AboutPage() {
   return (
-    <div>
+    <div className="about">
       <h1>Об авторе проекта</h1>
+      <Nav />
       <section>
         <figure>
           <img src="my-photo.jpg" alt="Фото автора" width="200" />

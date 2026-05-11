@@ -1,5 +1,5 @@
 import { dataInit } from "@constants/dataInit";
-import { Card } from "@entities/index";
+import { Card, Nav } from "@entities/index";
 
 import type { FormData } from "../../../shared/types/formData";
 
@@ -19,6 +19,7 @@ export function FormPage({
   return (
     <div>
       <h2>Форма ввода данных пациента</h2>
+      <Nav />
       <form>
         <table>
           <tbody>
