@@ -1,3 +1,5 @@
+import "./Card.scss";
+
 import type { FormData } from "../../../shared/types/formData";
 
 interface DataProps {
@@ -6,7 +8,7 @@ interface DataProps {
 
 export function Card({ data }: DataProps) {
   return (
-    <div>
+    <div className="card">
       <h3>Карточка пациента: {data.fio}</h3>
       <section>
         <h4>Основные сведения</h4>

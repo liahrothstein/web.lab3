@@ -1,3 +1,5 @@
+import "./MainPage.scss";
+
 import { Card, Nav } from "@entities/index";
 
 import type { FormData } from "../../../shared/types/formData";

@@ -1,3 +1,5 @@
+import "./FormPage.scss";
+
 import { dataInit } from "@constants/dataInit";
 import { Card, Nav } from "@entities/index";
 
@@ -17,7 +19,7 @@ export function FormPage({
   setDataArr,
 }: FormPageProps) {
   return (
-    <div>
+    <div className="form">
       <h2>Форма ввода данных пациента</h2>
       <Nav />
       <form>
@@ -150,7 +152,7 @@ export function FormPage({
             </tr>
             <tr>
               <td>Резус-фактор:</td>
-              <td>
+              <td className="radio-group">
                 <label>
                   <input
                     type="radio"

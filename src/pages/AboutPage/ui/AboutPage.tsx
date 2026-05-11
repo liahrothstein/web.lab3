@@ -1,3 +1,5 @@
+import "./AboutPage.scss";
+
 import { Card, Nav } from "@entities/index";
 
 import photo from "../../../shared/assets/images/photo.jpg";
