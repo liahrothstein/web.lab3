@@ -1,5 +1,6 @@
 import { Card, Nav } from "@entities/index";
 
+import photo from "../../../shared/assets/images/photo.jpg";
 import type { FormData } from "../../../shared/types/formData";
 
 interface AboutPageProps {
@@ -13,22 +14,21 @@ export function AboutPage({ dataArr }: AboutPageProps) {
       <Nav />
       <section>
         <figure>
-          <img src="my-photo.jpg" alt="Фото автора" width="200" />
-          <figcaption>Студент-разработчик</figcaption>
+          <img src={photo} alt="Фото автора" />
+          <figcaption>Front-end разработчик</figcaption>
         </figure>
       </section>
       <section>
         <h2>Личная информация</h2>
         <ul>
           <li>
-            <strong>Ф.И.О.:</strong> Иванов Иван Иванович
+            <strong>Ф.И.О.:</strong> Новиков Дмитрий Алексеевич
           </li>
           <li>
-            <strong>Учебное заведение:</strong> Государственный технический
-            университет
+            <strong>Учебное заведение:</strong> ГГУ им. Франциска Скорины
           </li>
           <li>
-            <strong>Группа:</strong> ИТ-24
+            <strong>Группа:</strong> КФ-17
           </li>
           <li>
             <strong>Номер варианта:</strong> 14
@@ -43,13 +43,13 @@ export function AboutPage({ dataArr }: AboutPageProps) {
         </p>
         <ul>
           <li>
-            <strong>Электронная почта:</strong> ivan.ivanov@example.com
+            <strong>Электронная почта:</strong> liahrothstein@gmail.com
           </li>
           <li>
-            <strong>Телефон:</strong> +7 (999) 000-00-00
+            <strong>Телефон:</strong> +375 (29) 622-44-83
           </li>
           <li>
-            <strong>Telegram:</strong> @student_dev
+            <strong>Telegram:</strong> @i_do_not_really_care_anymore_now
           </li>
         </ul>
       </section>
