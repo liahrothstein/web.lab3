@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Лабораторная работа №3: Фреймы и формы ввода данных
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Данный проект представляет собой веб-приложение, разработанное на **React** с использованием **TypeScript** и **SCSS**. Основная цель работы — имитация классической фреймовой структуры с помощью современных технологий и реализация формы сбора данных пациента.
 
-Currently, two official plugins are available:
+## 🔗 Живая демо-версия (Deploy)
+Просмотреть проект в браузере можно по ссылке:
+**[https://liahrothstein.github.io/web.lab3/](https://liahrothstein.github.io/web.lab3/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📋 Описание варианта
 
-## React Compiler
+**Вариант №14**
+- **Тема:** Регистрация физических показателей пациента.
+- **Поля формы:**
+  - Ф.И.О. (текстовое поле)
+  - Год рождения (числовое поле)
+  - Рост (см)
+  - Вес (кг)
+  - Группа крови (выпадающий список)
+  - Резус-фактор (радиокнопки)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Технологический стек
 
-## Expanding the ESLint configuration
+- **Frontend:** React 18
+- **Язык:** TypeScript
+- **Стилизация:** SCSS (Модульный подход)
+- **Роутинг:** React Router DOM
+- **Управление состоянием:** Хук `useState` для управляемых форм.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Структура проекта
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Проект организован по принципам модульности:
+- `src/entities/` — общие компоненты (Карточка пациента `Card`, Навигация `Nav`).
+- `src/pages/` — страницы приложения:
+  - `MainPage`: Описание назначения системы.
+  - `AboutPage`: Информация об авторе.
+  - `FormPage`: Интерактивная форма ввода.
+- `src/shared/` — типы данных (`formData.ts`), константы и ассеты.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 💡 Особенности реализации
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Имитация фреймов:** Вместо устаревшего тега `<frameset>`, использован гибкий макет на базе CSS Flexbox, разделяющий экран на шапку, боковую панель навигации и основную область контента.
+2. **Унифицированный дизайн:** Компонент `Card` вынесен в отдельный модуль со своим SCSS-файлом, что гарантирует одинаковое отображение карточек на всех страницах.
+3. **Метод передачи данных:** В соответствии с заданием, форма имитирует отправку данных методом `GET` с кодированием `application/x-www-form-urlencoded`.
+4. **Адаптивность:** Сетки карточек (`.patientsCards`) реализованы через CSS Grid, что позволяет им корректно перестраиваться под разные размеры экрана.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 👤 Автор
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Студент группы КФ-17
+**Новиков Дмитрий Алексеевич**
+Вариант №14
